@@ -2,7 +2,14 @@
 lvim.plugins = {
   {
     "mawkler/modicator.nvim",
+    branch = "lualine-refactor",
+    config = function()
+      vim.o.cursorline = true
+      vim.o.number = true
+      vim.o.termguicolors = true
+    end,
     event = "ColorScheme",
+    opts={}
   },
   "HiPhish/nvim-ts-rainbow2",
   -- {
@@ -119,6 +126,32 @@ lvim.plugins = {
     event = "BufRead",
   },
   "ThePrimeagen/vim-be-good",
+  -- Meus plugins
+  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
+  "EdenEast/nightfox.nvim",
+  {
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup()
+    end,
+  },
+  {
+    "wakatime/vim-wakatime",
+  },
+  "kevinhwang91/nvim-hlslens",
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+  },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
+  {
+    "olimorris/persisted.nvim",
+    -- lazy = true, -- For lazy loading
+    config = true,
+  },
   -- "folke/noice.nvim",
   -- "rcarriga/nvim-notify",
 

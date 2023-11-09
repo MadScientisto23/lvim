@@ -112,7 +112,8 @@ lvim.builtin.which_key.mappings["l"] = {
     "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
     "Prev Diagnostic",
   },
-  v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Virtual Text" },
+  -- v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Virtual Text" },
+  v = { "<cmd>lua ToggleVirtualText()<cr>", "Virtual Text" },
   l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
   o = { "<cmd>SymbolsOutline<cr>", "Outline" },
   q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
@@ -197,5 +198,16 @@ local m_mappings = {
   -- },
   -- [";"] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
 }
+
+local virtual_text_enabled = true
+
+function ToggleVirtualText()
+  virtual_text_enabled = not virtual_text_enabled
+  if virtual_text_enabled then
+    vim.diagnostic.config { virtual_text = true }
+  else
+    vim.diagnostic.config { virtual_text = false }
+  end
+end
 
 which_key.register(m_mappings, m_opts)
