@@ -212,7 +212,7 @@ neogit.setup {
       ["$"] = "CommandHistory",
       ["#"] = "Console",
       ["<c-r>"] = "RefreshBuffer",
-      ["<o>"] = "GoToFile",
+      ["<Tab>"] = "GoToFile",
       ["<c-v>"] = "VSplitOpen",
       ["<c-x>"] = "SplitOpen",
       ["<c-t>"] = "TabOpen",

@@ -9,9 +9,10 @@ lvim.plugins = {
       vim.o.termguicolors = true
     end,
     event = "ColorScheme",
-    opts={}
+    opts = {},
   },
-  "HiPhish/nvim-ts-rainbow2",
+  -- "HiPhish/nvim-ts-rainbow2",
+  "hiphish/rainbow-delimiters.nvim",
   -- {
   --   dir = "/Users/chris/Repos/bookmark.nvim",
   -- },
