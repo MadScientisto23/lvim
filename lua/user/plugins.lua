@@ -1,16 +1,16 @@
 -- Additional Plugins
 lvim.plugins = {
-  {
-    "mawkler/modicator.nvim",
-    branch = "lualine-refactor",
-    config = function()
-      vim.o.cursorline = true
-      vim.o.number = true
-      vim.o.termguicolors = true
-    end,
-    event = "ColorScheme",
-    opts = {},
-  },
+  -- {
+  --   "mawkler/modicator.nvim",
+  --   branch = "lualine-refactor",
+  --   config = function()
+  --     vim.o.cursorline = true
+  --     vim.o.number = true
+  --     vim.o.termguicolors = true
+  --   end,
+  --   event = "ColorScheme",
+  --   opts = {},
+  -- },
   -- "HiPhish/nvim-ts-rainbow2",
   "hiphish/rainbow-delimiters.nvim",
   -- {
@@ -61,7 +61,7 @@ lvim.plugins = {
   "kevinhwang91/nvim-bqf",
   "is0n/jaq-nvim",
   "nacro90/numb.nvim",
-  "neogitorg/neogit",
+  "NeogitOrg/neogit",
   "sindrets/diffview.nvim",
   "simrat39/rust-tools.nvim",
   "olexsmir/gopher.nvim",
