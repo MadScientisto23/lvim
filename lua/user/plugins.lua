@@ -18,12 +18,21 @@ lvim.plugins = {
   -- },
   "andymass/vim-matchup",
   "lunarvim/synthwave84.nvim",
-  {
-    "kndndrj/nvim-dbee",
-    build = function()
-      require("dbee").install()
-    end,
+{
+  "kndndrj/nvim-dbee",
+  dependencies = {
+    "MunifTanjim/nui.nvim",
   },
+  build = function()
+    -- Install tries to automatically detect the install method.
+    -- if it fails, try calling it with one of these parameters:
+    --    "curl", "wget", "bitsadmin", "go"
+    require("dbee").install()
+  end,
+  config = function()
+    require("dbee").setup(--[[optional config]])
+  end,
+},
   "kkharji/sqlite.lua",
   { url = "git@github.com:ChristianChiarulli/bookmark.nvim.git" },
   { url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
@@ -152,6 +161,14 @@ lvim.plugins = {
     "olimorris/persisted.nvim",
     -- lazy = true, -- For lazy loading
     config = true,
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
   },
   -- "folke/noice.nvim",
   -- "rcarriga/nvim-notify",
