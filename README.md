@@ -1,5 +1,6 @@
 # My LunarVim Config
 
+banaina
 ## Get healthy
 
 Open `nvim` and enter the following:
